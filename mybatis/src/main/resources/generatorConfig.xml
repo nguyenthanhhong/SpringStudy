@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="context1">
+        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/nthdata" driverClass="com.mysql.cj.jdbc.Driver" password="Niji@123" userId="root" />
+        <javaModelGenerator targetPackage="com.nth.mybatis.model" targetProject="src/main/java" />
+        <javaClientGenerator targetPackage="com.nth.mybatis.mapper" targetProject="src/main/java" />
+        <table schema="public" tableName="TB_CM_USER"></table>
+        <table schema="public" tableName="TB_CM_AUTH"></table>
+        <table schema="public" tableName="TB_CM_USER_AUTH"></table>
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nth.mybatis.mapper.TbCmUserExtendMapper">
+
+    <select id="getUser" resultType="map">
+        SELECT * FROM TB_CM_USER WHERE USER_ID='002'
+    </select>
+
+    <select id="getUserAuthList" resultType="map" parameterType="map">
+        SELECT
+        A.USER_ID,
+        A.AUTH_CD,
+        A.USE_YN,
+        B.USER_NM,
+        C.AUTH_NM
+        FROM    TB_CM_USER_AUTH A
+        INNER JOIN TB_CM_USER B
+        ON B.USER_ID = A.USER_ID
+        INNER JOIN TB_CM_AUTH C
+        ON C.AUTH_CD = A.AUTH_CD
+        WHERE   1 = 1
+        <if test='USER_ID !=NULL and USER_ID !=""'>
+            AND A.USER_ID = #{USER_ID}
+        </if>
+        <if test='USER_NM != null and USER_NM != ""'>
+            AND USER_NM = #{USER_NM}
+        </if>
+        <if test='S_USE_YN != null and S_USE_YN != ""'>
+            AND A.USE_YN = #{S_USE_YN}
+        </if>
+    </select>
+
+</mapper>
