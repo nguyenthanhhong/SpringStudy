@@ -1,6 +1,6 @@
 package com.nth.SpringSecurityOauth2.config;
 
-import com.nth.SpringSecurityOauth2.UserService;
+import com.nth.SpringSecurityOauth2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
